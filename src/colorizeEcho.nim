@@ -24,34 +24,38 @@ let colors = {
     "[lightWhite]":         "97",
 
     # Background colors
-    "[bBlack]":             "40",
-    "[bRed]":               "41",
-    "[bGreen]":             "42",
-    "[bYellow]":            "43",
-    "[bBlue]":              "44",
-    "[bMagenta]":           "45",
-    "[bCyan]":              "46",
-    "[bWhite]":             "47",
-    "[bDarkGray]":          "100",
-    "[bLightRed]":          "101",
-    "[bLightGreen]":        "102",
-    "[bLightYellow]":       "103",
-    "[bLightBlue]":         "104",
-    "[bLightMagenta]":      "105",
-    "[bLightCyan]":         "106",
-    "[bLightWhite]":        "107",
+    "[bgBlack]":             "40",
+    "[bgRed]":               "41",
+    "[bgGreen]":             "42",
+    "[bgYellow]":            "43",
+    "[bgBlue]":              "44",
+    "[bgMagenta]":           "45",
+    "[bgCyan]":              "46",
+    "[bgWhite]":             "47",
+    "[bgDarkGray]":          "100",
+    "[bgLightRed]":          "101",
+    "[bgLightGreen]":        "102",
+    "[bgLightYellow]":       "103",
+    "[bgLightBlue]":         "104",
+    "[bgLightMagenta]":      "105",
+    "[bgLightCyan]":         "106",
+    "[bgLightWhite]":        "107",
     }
 
 proc colorizeEcho*(base: string): string {.discardable.} =
-    #[
-    Doing r"string" makes string what Nim calls "raw string",
-    so that "\[" doesn't recognize as metacharactor in regexp engine
-    ]# 
     var matches: seq[string] = base.findAll(re("\\[([a-zA-Z]+)\\]"))
     
+    var isBold: int = 0
     var baseCopy = base
+    
     for match in matches:
         for color in colors:
+            if match == "[bold]":
+                isBold = 1
+                baseCopy = baseCopy.replace(re("\\[bold\\]"), "")
+            elif match == "[regular]":
+                baseCopy = baseCopy.replace(re("\\[regular\\]"), "")
+                isBold = 0
             if match == color[0]:
-                baseCopy = baseCopy.replace(re("\\[" & match[1..len(match)-2] & "\\]", ), "\e[" & color[1] & "m")
+                baseCopy = baseCopy.replace(re("\\[" & match[1..len(match)-2] & "\\]"), "\e[" & $isBold & ";" & color[1] & "m")
     echo baseCopy & "\e[0m"
