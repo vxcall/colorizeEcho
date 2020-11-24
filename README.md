@@ -14,34 +14,37 @@ e.g. for foreground = `[red]`, `[cyan]`
 e.g. for background =` [bRed]`, `[bCyan]`
 
 ```nim
-import colorizeEcho/colorizeEcho
+import colorizeEcho/src/colorizeEcho
 
 colorizeEcho "[magenta]Every [green]color [cyan]is [default]beautiful."
-colorizeEcho "[black][bMagenta]Backgraund [bGreen]color [bLightRed]is [bCyan]changable [bYellow]too."
+
+colorizeEcho "[black][bgMagenta]Backgraund [bgGreen]color [bgLightRed]is [bgCyan]changable [bgYellow]too."
+
+colorizeEcho "[lightYellow][bold]THICC TEXT [regular]REGULAR TEXT"
 ```
 
 result ↓
 
-![result](https://user-images.githubusercontent.com/33578715/100054593-4d617180-2e5d-11eb-945e-d7d628fac8a9.png)
+![result](https://user-images.githubusercontent.com/33578715/100107482-a43e6980-2ea4-11eb-89d5-3cdb4d2282c8.png)
 
 # :balloon: Available colors
 
-| foreground | background |
-| ---------- | ---------- |
-| `[default]` | `[bDefault]` |
-| `[black]`  | `[bBlack]` |
-| `[red]` | `[bRed]` |
-| `[green]` | `[bGreen]` |
-| `[yellow]` | `[bYellow]` |
-| `[blue]` | `[bBlue]` |
-| `[magenta]` | `[bMagenta]` |
-| `[cyan]` | `[bCyan]` |
-| `[white]` | `[bWhite]` |
-| `[darkGray]` | `[bDarkGray]` |
-| `[lightRed]` | `[bLightRed]` |
-| `[lightGreen]` | `[bLightGreen]` |
-| `[lightYellow]` | `[bLightYellow]` |
-| `[lightBlue]` | `[bLightBlue]` |
-| `[lightMagenta]` | `[bLightMagenta]` |
-| `[lightCyan]` | `[bLightCyan]` |
-| `[lightWhite]` | `[bLightWhite]` |
+| foreground | background | weight |
+| ---------- | ---------- | ------ |
+| `[default]` | `[bgDefault]` | `[regular]` |
+| `[black]`  | `[bgBlack]` | `[bold]` |
+| `[red]` | `[bgRed]` |
+| `[green]` | `[bgGreen]` |
+| `[yellow]` | `[bgYellow]` |
+| `[blue]` | `[bgBlue]` |
+| `[magenta]` | `[bgMagenta]` |
+| `[cyan]` | `[bgCyan]` |
+| `[white]` | `[bgWhite]` |
+| `[darkGray]` | `[bgDarkGray]` |
+| `[lightRed]` | `[bgLightRed]` |
+| `[lightGreen]` | `[bgLightGreen]` |
+| `[lightYellow]` | `[bgLightYellow]` |
+| `[lightBlue]` | `[bgLightBlue]` |
+| `[lightMagenta]` | `[bgLightMagenta]` |
+| `[lightCyan]` | `[bgLightCyan]` |
+| `[lightWhite]` | `[bgLightWhite]` |
