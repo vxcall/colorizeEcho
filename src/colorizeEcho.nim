@@ -42,7 +42,7 @@ let colors = {
     "[bLightWhite]":        "107",
     }
 
-proc colorString*(base: string): string =
+proc colorizeEcho*(base: string): string {.discardable.} =
     #[
     Doing r"string" makes string what Nim calls "raw string",
     so that "\[" doesn't recognize as metacharactor in regexp engine
@@ -54,4 +54,4 @@ proc colorString*(base: string): string =
         for color in colors:
             if match == color[0]:
                 baseCopy = baseCopy.replace(re("\\[" & match[1..len(match)-2] & "\\]", ), "\e[" & color[1] & "m")
-    return baseCopy & "\e[0m"
+    echo baseCopy & "\e[0m"
