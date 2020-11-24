@@ -7,7 +7,7 @@ Moreover, it gives your debugging life more comfortable. :kissing_heart:
 
 # :fire: Usage
 
-To change foreground color or background color of output message, **put color name surrounded by square bracket at middle of the message**.
+To change foreground color or background color of output message, **put color name surrounded by square bracket at right before the text you'd like to change color**.
 
 e.g. for foreground = `[red]`, `[cyan]`
 
