@@ -20,14 +20,14 @@ import colorizeEcho/src/colorizeEcho
 
 colorizeEcho "[magenta]Every [green]color [cyan]is [default]beautiful."
 
-colorizeEcho "[black][bgMagenta]Backgraund [bgGreen]color [bgLightRed]is [bgCyan]changable [bgYellow]too."
+colorizeEcho "[black][bgMagenta]Background [bgGreen]color [bgLightRed]is [bgCyan]changable [bgYellow]too."
 
 colorizeEcho "[lightYellow][bold]THICC TEXT [regular]REGULAR TEXT"
 ```
 
 result ↓
 
-![result](https://user-images.githubusercontent.com/33578715/100108473-c7b5e400-2ea5-11eb-80a2-2a25dee4fdd1.png)
+![result](https://user-images.githubusercontent.com/33578715/100331937-bab30500-300b-11eb-91aa-09ecca0436df.png)
 
 # :balloon: Available colors
 
