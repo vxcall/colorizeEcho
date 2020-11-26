@@ -4,6 +4,13 @@ colorizeEcho is a package which simply colorize echo message on Windows command 
 It makes your debug message more clear and beautiful. 
 Moreover, it gives your debugging life more comfortable. :kissing_heart:
 
+# Installation
+
+Run following command on your command prompt and you're good to go
+
+```shell
+$ nimble install colorizeEcho
+```
 
 # :fire: Usage
 
@@ -14,7 +21,7 @@ e.g. for foreground = `[red]`, `[cyan]`
 e.g. for background =` [bRed]`, `[bCyan]`
 
 ```nim
-import colorizeEcho/src/colorizeEcho
+import colorizeEcho
 
 colorizeEcho "[magenta]Every [green]color [cyan]is [default]beautiful."
 

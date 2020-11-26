@@ -56,11 +56,10 @@ proc colorizeEcho*(base: string): string {.discardable.} =
             res &= "\e[0;" & currentColor & ";" & currentBackground & "m" & str[len("regular")+1..len(str)-1]
         else:
             for color in colors:
-                if str.startsWith(color[0]) and color[0].startsWith("bg") == false: # If str doesn't start with bg which means it's foreground specifier
-                    currentColor = color[1]
+                if str.startsWith(color[0]):
+                    if color[0].startsWith("bg") == false: # If str doesn't start with bg which means it's foreground specifier
+                        currentColor = color[1]
+                    elif color[0].startsWith("bg") == true: # If str starts with bg which means it's background specifier
+                        currentBackground = color[1]
                     res &= "\e[" & color[1] & "m" & str[len(color[0])+1..len(str)-1]
-                elif str.startsWith(color[0]) and color[0].startsWith("bg") == true: # If str starts with bg which means it's background specifier
-                    currentBackground = color[1]
-                    res &= "\e[" & color[1] & "m" & str[len(color[0])+1..len(str)-1]
-
     echo res & "\e[m"
