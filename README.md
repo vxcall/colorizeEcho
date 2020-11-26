@@ -1,9 +1,10 @@
 # :thought_balloon: colorizeEcho
 colorizeEcho is a super fast, and lightweight library that simply colorize echo message on Windows command prompt.
 
+Also note that this is a Nim integration for [mitchellh/colorstring](https://github.com/mitchellh/colorstring).
+
 It makes your debug message more clear and beautiful. 
 Moreover, it gives your debugging life more comfortable and full of happiness. :kissing_heart:
-
 
 # :fire: Usage
 
