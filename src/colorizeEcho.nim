@@ -43,6 +43,11 @@ let colors = {
     }
 
 proc colorizeEcho*(base: string): string {.discardable.} =
+    ##colorizeEcho prints out whatever message with your preffered color.
+    runnableExamples:
+        colorizeEcho "[magenta]Every [green]color [cyan]is [default]beautiful."
+        colorizeEcho "[black][bgMagenta]Backgraund [bgGreen]color [bgLightRed]is [bgCyan]changable [bgYellow]too."
+        colorizeEcho "[lightYellow][bold]THICC TEXT [regular]REGULAR TEXT"
     var res: string
     var currentColor = "39"
     var currentBackground = "49"
