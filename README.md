@@ -6,7 +6,6 @@ Also note that this is a Nim integration for [mitchellh/colorstring](https://git
 It makes your debug message more clear and beautiful. 
 Moreover, it gives your debugging life more comfortable and full of happiness. :kissing_heart:
 
-<<<<<<< HEAD
 # Installation
 
 Run following command on your command prompt and you're good to go
@@ -15,8 +14,6 @@ Run following command on your command prompt and you're good to go
 $ nimble install colorizeEcho
 ```
 
-=======
->>>>>>> main
 # :fire: Usage
 
 To change foreground color or background color of output message, **put color name surrounded by square bracket at right before the text you'd like to change color**.
