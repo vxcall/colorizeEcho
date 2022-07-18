@@ -27,11 +27,11 @@ To change font weight, **put `[bold]` or `[regular]` at right before the text**
 ```nim
 import colorizeEcho
 
-colorizeEcho "[magenta]Every [green]color [cyan]is [default]beautiful."
+cecho "[magenta]Every [green]color [cyan]is [default]beautiful."
 
-colorizeEcho "[black][bgMagenta]Background [bgGreen]color [bgLightRed]is [bgCyan]changable [bgYellow]too."
+cecho "[black][bgMagenta]Background [bgGreen]color [bgLightRed]is [bgCyan]changable [bgYellow]too."
 
-colorizeEcho "[lightYellow][bold]THICC TEXT [regular]REGULAR TEXT"
+cecho "[lightYellow][bold]THICC TEXT [regular]REGULAR TEXT"
 ```
 
 result ↓

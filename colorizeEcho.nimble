@@ -1,7 +1,7 @@
 # Package
 
-version       = "1.0"
-author        = "s3pt3mb3r"
+version       = "1.1"
+author        = "pseuxide"
 description   = "colorizeEcho is a package which colorize echo message on Windows command prompt."
 license       = "MIT"
 srcDir        = "src"

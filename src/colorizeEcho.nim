@@ -42,12 +42,12 @@ let colors = {
     "bgLightWhite":        "107",
     }
 
-proc colorizeEcho*(base: string): string {.discardable.} =
-    ##colorizeEcho prints out whatever message with your preffered color.
+proc cecho*(base: string): string {.discardable.} =
+    ##cecho (stands forcolorizeEcho) prints out whatever message with your preffered color.
     runnableExamples:
-        colorizeEcho "[magenta]Every [green]color [cyan]is [default]beautiful."
-        colorizeEcho "[black][bgMagenta]Backgraund [bgGreen]color [bgLightRed]is [bgCyan]changable [bgYellow]too."
-        colorizeEcho "[lightYellow][bold]THICC TEXT [regular]REGULAR TEXT"
+        cecho "[magenta]Every [green]color [cyan]is [default]beautiful."
+        cecho "[black][bgMagenta]Backgraund [bgGreen]color [bgLightRed]is [bgCyan]changable [bgYellow]too."
+        cecho "[lightYellow][bold]THICC TEXT [regular]REGULAR TEXT"
     var res: string
     var currentColor = "39"
     var currentBackground = "49"
