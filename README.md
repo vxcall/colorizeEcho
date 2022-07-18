@@ -16,6 +16,15 @@ $ nimble install colorizeEcho
 
 # :fire: Usage
 
+Let me show you the minimal form of usage first:
+
+```nim
+import colorizeEcho
+
+initColorizeEcho() # Invoking this before you call cecho is compulsory.
+cecho "[magenta] supposed to be magenta color" # Use cecho just as you use echo with a magical phrase [COLOR_NAME].
+```
+
 To change foreground color or background color of output message, **put color name surrounded by square bracket at right before the text you'd like to change color**.
 
 e.g. for foreground = `[red]`, `[cyan]`
@@ -26,6 +35,8 @@ To change font weight, **put `[bold]` or `[regular]` at right before the text**
 
 ```nim
 import colorizeEcho
+
+initColorizeEcho()
 
 cecho "[magenta]Every [green]color [cyan]is [default]beautiful."
 

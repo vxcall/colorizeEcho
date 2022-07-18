@@ -1,4 +1,5 @@
 import strutils
+import winlean
 
 let colors = {  
     # Default colors
@@ -68,3 +69,14 @@ proc cecho*(base: string): string {.discardable.} =
                         currentBackground = color[1]
                     res &= "\e[" & color[1] & "m" & str[len(color[0])+1..len(str)-1]
     echo res & "\e[m"
+
+proc setConsoleMode(hConsoleOutput: int, mode: int): int {.stdcall, discardable, dynlib: "kernel32", importc: "SetConsoleMode".}
+
+proc initColorizeEcho*() {.discardable.} =
+    const ENABLE_PROCESSED_OUTPUT = 0x0001
+    const ENABLE_WRAP_AT_EOL_OUTPUT = 0x0002
+    const ENABLE_VIRTUAL_TERMINAL_PROCESSING = 0x0004
+    const MODE = ENABLE_PROCESSED_OUTPUT + ENABLE_WRAP_AT_EOL_OUTPUT + ENABLE_VIRTUAL_TERMINAL_PROCESSING
+    
+    var handle = getStdHandle(-11)
+    setConsoleMode(handle, MODE)
